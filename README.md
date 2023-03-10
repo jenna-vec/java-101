@@ -1,1 +1,1 @@
-# java-101
+Starting java practice
