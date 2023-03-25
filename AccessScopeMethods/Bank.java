@@ -1,22 +1,23 @@
 package AccessScopeMethods;
 
-public class Bank {
-    //instance variables accessing CheckingAccount constructor
-    private CheckingAccount accountOne;
-    private CheckingAccount accountTwo;
+public class Bank{
+  private CheckingAccount accountOne;
+  private CheckingAccount accountTwo;
 
-    //constructor accessing CheckingAccount
-    public Bank() {
-        accountOne = new CheckingAccount("Zeus", 100, 1);
-        accountTwo = new CheckingAccount("Hades", 200, 2);
-    }
+  public Bank(){
+    this.accountOne = new CheckingAccount("1", 100);
+    this.accountTwo = new CheckingAccount("2", 200);
+  }
 
-    //main method
-    public static void main(String[] args){
-        Bank bankOfGods = new Bank();
-        System.out.println(bankOfGods.accountOne.getBalance());
-        bankOfGods.accountOne.setBalance(500);
-        System.out.println(bankOfGods.accountOne.getBalance());
-    }
+  public static void main(String[] args){
+    Bank ourBank = new Bank();
+    ourBank.accountOne.getAccountInformation();
+      /*
+      * Money in account: 100
+      * Next Month's Interest: 2.0
+      * If ourBank.accountOne.calculateNextMonthInterest(); is called it will produce an error.
+      * .calculateNextMonthInterest() is a private method.
+      */
+  }
 
 }
