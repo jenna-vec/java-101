@@ -1,25 +1,29 @@
 package AccessScopeMethods;
 
-public class CheckingAccount {
-    //instance variables, all private
-    private String name;
-    private int balance;
-    private int id;
+public class CheckingAccount{
+  private String id;
+  private int balance;
+  private double interestRate;
 
-    //Contstructor
-    public CheckingAccount(String inputName, int inputBalance, int inputId) {
-        name = inputName;
-        balance = inputBalance;
-        id = inputId;
-    }
+  public CheckingAccount(String inputId, int inputBalance){
+    this.id = inputId;
+    this.balance = inputBalance;
+    this.interestRate = 0.02;
+  }
 
-    //accessor method
-    public int getBalance() {
-        return balance;
-    }
+  //getBalance() and calculateNextMonthInterest() are private but the info is called in a public method
+  public void getAccountInformation(){
+    System.out.println("Money in account: " + this.getBalance());
+    System.out.println("Next Month's Interest: " + this.calculateNextMonthInterest());
 
-    //mutator method
-    public void setBalance(int newBalance){
-        balance = newBalance;
-    }
+  }
+
+  private int getBalance(){
+    return this.balance;
+  }
+
+  private double calculateNextMonthInterest(){
+    return this.interestRate * this.balance;
+  }
+
 }
